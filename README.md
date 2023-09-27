@@ -4,11 +4,20 @@
 
 Are you a sushi enthusiast with an insatiable appetite for adventure? Do you dream of exploring every nook and cranny of your city in search of the finest sushi joints? Well, look no further! Welcome to the Sushi Coverage Map, a project that combines your love for sushi with cutting-edge technology! 🍣🌍
 
-![Sushi Coverage Map](https://link.to/your/sushi/map/image.png)
+[**Try it now**](https://sushi-coverage-check.firebaseapp.com/)
 
-## 🛸 What is this Magical Sushi Map?
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 40%; text-align: center;">
+      <img src="screenshot.png" alt="Sushi Coverage Map Screenshot" width="300">
+    </td>
+    <td style="width: 60%;">
+        <h2>🛸 What is this Magical Sushi Map?</h2>
+        Our Sushi Coverage Map is like Google Maps, but specifically designed to help you navigate the sushi scene in your city. Powered by Angular and Firebase, this map will make your sushi quests more enjoyable than ever before. 
+    </td>
+  </tr>
+</table>
 
-Our Sushi Coverage Map is like Google Maps, but specifically designed to help you navigate the sushi scene in your city. Powered by Angular and Firebase, this map will make your sushi quests more enjoyable than ever before. 
 
 ## 🌟 Features That Will Blow Your Mind
 
