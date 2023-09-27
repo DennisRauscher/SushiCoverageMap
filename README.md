@@ -23,9 +23,7 @@ Are you a sushi enthusiast with an insatiable appetite for adventure? Do you dre
 
 - 🗺️ **Interactive Map**: Explore your city's sushi joints with an easy-to-use map interface. Zoom in, zoom out, and let your cravings guide you.
 - 🍣 **Sushi Spot Locator**: Find sushi restaurants near you in a flash. Never go hungry again!
-- ⭐ **Ratings & Reviews**: Share your thoughts and read what others think about the sushi spots. Trust the sushi community's judgment.
-- 📸 **Foodie Photos**: Drool over mouthwatering sushi pics shared by fellow sushi adventurers.
-- 🏆 **Sushi Awards**: Earn badges and trophies as you conquer sushi spots all over the city. Become a Sushi Samurai!
+- ⭐ **Ratings & Reviews**: See what others think about the sushi spots. Trust the sushi community's judgment.
 
 ## 🚀 Getting Started
 
