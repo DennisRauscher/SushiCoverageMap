@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="topBar">
+    <div class="headline">
+        Sushi Checker
+        <div class="subtext">Check your sushi coverage 🍣</div>
+    </div>
+    <div class="container">
+        <input id="standort" type="text" class="location-input" placeholder="Enter a location..." [(ngModel)]="standort">
+        <button id="searchBtn" class="search-button" (click)="sucheNachSushiRestaurants()">🍣🤤</button>
+    </div>
+  </div>
+  <div id="map" #map></div>
+</div>
