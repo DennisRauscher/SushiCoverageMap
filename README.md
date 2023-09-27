@@ -9,7 +9,7 @@ Are you a sushi enthusiast with an insatiable appetite for adventure? Do you dre
 <table style="width: 100%;">
   <tr>
     <td style="width: 40%; text-align: center;">
-      <img src="screenshot.png" alt="Sushi Coverage Map Screenshot" width="300">
+      <img src="Screenshot.png" alt="Sushi Coverage Map Screenshot" width="300">
     </td>
     <td style="width: 60%;">
         <h2>🛸 What is this Magical Sushi Map?</h2>
