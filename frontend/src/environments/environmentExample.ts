@@ -9,5 +9,6 @@ export const environment = {
     authDomain: '',
     messagingSenderId: '',
   },
-  googleMapsKey: ""
+  googleMapsKey: "",
+  recaptcha_key: ""
 };

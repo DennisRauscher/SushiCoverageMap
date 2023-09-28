@@ -4,7 +4,7 @@
 
 Are you a sushi enthusiast with an insatiable appetite for adventure? Do you dream of exploring every nook and cranny of your city in search of the finest sushi joints? Well, look no further! Welcome to the Sushi Coverage Map, a project that combines your love for sushi with cutting-edge technology! 🍣🌍
 
-[**Try it now**](https://sushi-coverage-check.firebaseapp.com/)
+[**Try it now**](https://sushi-coverage-check.web.app/)
 
 <table style="width: 100%;">
   <tr>

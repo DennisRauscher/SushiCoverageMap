@@ -73,7 +73,8 @@ exports.sushi = functions.https.onRequest(async (req, res) => {
 
         // Check token
         if(!verifyRecaptchaToken(token)) {
-            return res.status(400).send('reCAPTCHA verification failed');
+          res.status(400).send('reCAPTCHA verification failed');
+          return;
         }
 
         const place = await getGeolocation(placeInput);
