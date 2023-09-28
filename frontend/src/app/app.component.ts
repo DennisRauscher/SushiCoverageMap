@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Loader } from "@googlemaps/js-api-loader"
 import { AngularFireFunctions, AngularFireFunctions as Functions } from '@angular/fire/compat/functions';
 import { environment } from '../environments/environment';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ public curLocMarker: any;
 public standort = "";
 
 
-constructor(private fns: AngularFireFunctions) {
+constructor(private fns: AngularFireFunctions, 
+            private recaptchaV3Service: ReCaptchaV3Service) {
 
 }
 
@@ -166,11 +168,14 @@ public sucheNachSushiRestaurants() {
 
 public getSushiRestaurants(placeInput: any) {
   
-    const sushi = this.fns.httpsCallable('sushi');
-    const data = sushi({ placeInput });
-    data.subscribe(res => {
-      console.log(res);
-      this.handleResults(res as {place: any, sushiRestaurants: any[]});
-    });
+    
+    this.recaptchaV3Service.execute('importantAction')
+      .subscribe((token) => {
+          const sushi = this.fns.httpsCallable('sushi');
+          const data = sushi({ placeInput, token });
+          data.subscribe(res => {
+            this.handleResults(res as {place: any, sushiRestaurants: any[]});
+          });
+      });
 }
 }

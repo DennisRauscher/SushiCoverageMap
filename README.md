@@ -123,6 +123,48 @@ Lastly please update the
 MAP_API_KEY=MapsKey
 ```
 
+## Setting the "suhshiapp.mapsserverkey" Secret
+
+To set the "suhshiapp.mapsserverkey" secret in your Firebase project, follow these steps:
+
+1. **Firebase CLI Installation:**
+
+   If you haven't already, make sure you have the Firebase CLI installed. You can install it globally using npm (Node.js package manager) with the following command:
+
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+2. **Login to Firebase:**
+
+   If you're not already logged in to your Firebase account, use the following command to log in:
+
+   ```bash
+   firebase login
+   ```
+
+3. **Set the Secret:**
+
+   Use the Firebase CLI to set the "suhshiapp.mapsserverkey" secret. Replace `"YOUR_MAPS_SERVER_KEY"` with your actual Google Maps API server key:
+
+   ```bash
+   firebase functions:config:set suhshiapp.mapsserverkey="YOUR_MAPS_SERVER_KEY"
+   ```
+
+4. **Deploy Your Firebase Functions:**
+
+   To make the secret available to your Firebase Cloud Functions, you need to redeploy them:
+
+   ```bash
+   firebase deploy --only functions
+   ```
+
+Now, you've successfully set and accessed the "suhshiapp.mapsserverkey" secret in your Firebase project.
+
+---
+
+Feel free to customize this README section to fit your project's specific needs, and make sure to replace "YOUR_MAPS_SERVER_KEY" with the actual server key you want to set as the secret.
+
 ### 6. **Usage in Your Project**
 
 Now that you've set up your API keys, you can start using the Google APIs in your Angular app. Import the necessary libraries, and you're all set to integrate maps, geocoding, and places functionality into your Sushi Coverage Map!

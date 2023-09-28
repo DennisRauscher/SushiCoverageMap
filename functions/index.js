@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const axios = require('axios');
-const apiKey = 'AIzaSyAlGoSBOXpF5C4IfWf5ebI5LE7pXPToa7Y';
+const apiKey = functions.config().suhshiapp.mapsserverkey ?? "";
+const secretRecaptcha = functions.config().suhshiapp.secretrecaptcha ?? "";
 
 async function getGeolocation(placeInput) {
     try {
@@ -23,6 +24,37 @@ async function getGeolocation(placeInput) {
     }
 }
 
+async function verifyRecaptchaToken(recaptchaToken) {
+  if (!recaptchaToken) {
+    return res.status(400).send('reCAPTCHA token is missing');
+  }
+
+  try {
+    const response = await axios.post(
+      'https://www.google.com/recaptcha/api/siteverify',
+      null,
+      {
+        params: {
+          secret: secretRecaptcha,
+          response: recaptchaToken,
+        },
+      }
+    );
+
+    const { success, score } = response.data;
+
+    if (success && score >= 0.5) {
+      // Token is valid and has a high enough score, you can proceed with your logic here
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
+
 exports.sushi = functions.https.onRequest(async (req, res) => {
 
   res.set('Access-Control-Allow-Origin', '*');
@@ -37,9 +69,12 @@ exports.sushi = functions.https.onRequest(async (req, res) => {
     
     if (req.method === 'POST') {
         // Handle the POST request here
-        const { placeInput } = req.body.data; // Access POST data
+        const { placeInput, token } = req.body.data; // Access POST data
 
-        console.log(req.body)
+        // Check token
+        if(!verifyRecaptchaToken(token)) {
+            return res.status(400).send('reCAPTCHA verification failed');
+        }
 
         const place = await getGeolocation(placeInput);
         
