@@ -1,109 +1,177 @@
-/* Reset default styles for input field and button */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #ffffff;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 1s linear infinite;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
-#map {
-    flex-grow: 1;
+@keyframes slide {
+  from {
+    transform: rotate(-45deg);
+    background-position-x: 0;
+  }
+  to {
+    transform: rotate(-45deg);
+    background-position-x: -4000px;
+  }
 }
 
-input, button {
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-/* Apply modern styles to the container */
 .container {
-    width: 100%;
-    max-width: 400px; /* Adjust the maximum width as needed */
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox for layout */
-    margin-bottom: 20px;
-    margin-left: 20px;
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg'>\
+    <text x='0' y='98' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='198' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='298' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='398' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='498' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='598' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='698' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='798' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='898' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='998' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='1098' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+    <text x='0' y='1198' font-size='4em'>\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+        すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし すし\
+    </text>\
+  </svg>\
+  ");
+  background-repeat: repeat;
+  background-size: auto;
+  animation: 190s linear infinite slide;
+  height: 200%;
+  width: 200%;
+  opacity: 0.04;
+  z-index: 1;
+  position: fixed;
 }
 
-/* Style the location input field to have 100% width */
-.location-input {
-    flex: 1; /* Take up remaining space in the container */
-    border: none;
-    background: transparent; /* Transparent background */
-    color: #333; /* Text color */
+@keyframes letterDelay {
+  0% {
+    animation-delay: 0s;
+  }
+  100% {
+    animation-delay: 1s; /* Adjust this delay as needed */
+  }
 }
 
-/* Style the input placeholder text */
-.location-input::placeholder {
-    color: #999; /* Placeholder text color */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Add padding and margin to the input for spacing */
-.location-input {
-    padding: 10px;
-    margin: 10px 0;
+/* Apply animation classes to individual letters */
+.animate-letters span {
+  animation: slideIn 0.5s ease-in-out forwards, letterDelay 0.1s linear;
+  transform-origin: left;
+  opacity: 0;
 }
 
-/* Style the search button */
-.search-button {
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 4px;
+$num-elements: 14; // Change this to the number of elements you have
+
+// Define the base delay duration
+$base-delay: 0.1s; // Adjust this value as needed
+
+// Create a loop to generate animation delay classes for each element
+@for $i from 1 through $num-elements {
+  $animation-delay: $i * $base-delay;
+
+  .animate-letters span:nth-child(#{$i}) {
+    animation-delay: $animation-delay;
+  }
 }
 
-/* Add some margin to the button for spacing */
-.search-button {
-    margin-left: 10px;
+@keyframes textAnimation {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 
-/* Style the button on hover */
-.search-button:hover {
-    background-color: #0056b3; /* Button background color on hover */
+/* Apply animation class to the text */
+.animate-text-size {
+  display: inline-block;
+  transform: scale(0.8);
+  animation: textAnimation 10s ease-in-out infinite; /* Adjust the animation duration as needed */
 }
 
-.topBar {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
+.bottom-share-bar {
+  height: 0px;
+  padding: 0px;
+  @apply transition-all;
+  transition: all 3s;
+
+  &.active {
+    @apply p-4 h-4;
+    height: auto;
+  }
 }
 
-@media (max-width: 768px) {
-    .topBar {
-        display: block;
-    }
-    .headline {
-        text-align: center;
-    }
-    .subtext {
-        text-align: center;
-    }
-    .container {
-        margin: 0 auto; /* Center the container */
-    }
-}
-
-.headline {
-    font-size: 2rem;
-    flex-grow: 0;
-    margin-bottom: 20px;
-}
-
-.subtext {
-    display: block;
-    font-size: 1rem;
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  
+  &.active {
+    opacity: .7;
+    visibility: visible;
+  }
 }

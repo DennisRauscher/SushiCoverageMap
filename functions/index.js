@@ -2,6 +2,7 @@ const functions = require('firebase-functions');
 const axios = require('axios');
 const apiKey = functions.config().suhshiapp.mapsserverkey ?? "";
 const secretRecaptcha = functions.config().suhshiapp.secretrecaptcha ?? "";
+const searchterm = functions.config().suhshiapp.searchterm ?? "sushi";
 
 async function getGeolocation(placeInput) {
     try {
@@ -26,7 +27,7 @@ async function getGeolocation(placeInput) {
 
 async function verifyRecaptchaToken(recaptchaToken) {
   if (!recaptchaToken) {
-    return res.status(400).send('reCAPTCHA token is missing');
+    return false;
   }
 
   try {
@@ -86,7 +87,7 @@ exports.sushi = functions.https.onRequest(async (req, res) => {
             params: {
                 location: place.geometry.location.lat + ',' + place.geometry.location.lng,
                 radius: 30000,
-                keyword: 'sushi',
+                keyword: searchterm,
                 key: apiKey,
                 type: 'restaurant'
             },
