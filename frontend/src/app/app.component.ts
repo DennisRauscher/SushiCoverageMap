@@ -41,7 +41,16 @@ export class AppComponent implements AfterViewInit {
           streetViewControl: false,
           mapTypeControl: false,
           fullscreenControl: false,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: [
+            {
+              featureType: 'all',
+              elementType: 'all',
+              stylers: [
+                { saturation: -100 } // Set saturation to -100 to achieve grayscale
+              ]
+            }
+          ]
         })
       }
     }).catch((error) => { console.log(error) })
@@ -114,11 +123,12 @@ export class AppComponent implements AfterViewInit {
           strokeColor: 'transparent', // Set the border color to transparent
           strokeOpacity: 0,
           strokeWeight: 0,
-          fillColor: '#008000', // Set the fill color (e.g., red)
+          fillColor: '#ffc020', // Set the fill color (e.g., red)
           fillOpacity: fillOpacity * 0.1, // Set the fill opacity (0.0 to 1.0, 0.0 being fully transparent)
           map: this.map,
           center: place.geometry.location,
           radius: 0, // Radius in meters (adjust as needed)
+          zIndex: 0
         })
 
         this.circles.push(circle); // Store the circle object in the array
