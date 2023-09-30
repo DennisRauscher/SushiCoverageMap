@@ -12,6 +12,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat'
 import { RECAPTCHA_V3_SITE_KEY, ReCaptchaV3Service, RecaptchaV3Module } from 'ng-recaptcha'
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,6 @@ import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faShareNodes);
+    library.addIcons(faShareNodes, faGithub);
   }
 }

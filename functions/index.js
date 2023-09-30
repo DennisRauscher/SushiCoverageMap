@@ -86,7 +86,7 @@ exports.sushi = functions.https.onRequest(async (req, res) => {
         const response = await axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {
             params: {
                 location: place.geometry.location.lat + ',' + place.geometry.location.lng,
-                radius: 30000,
+                radius: 15000,
                 keyword: searchterm,
                 key: apiKey,
                 type: 'restaurant'

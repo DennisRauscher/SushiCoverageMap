@@ -60,15 +60,17 @@
     </div>
   </div>
   <div class="relative flex-grow z-10">
-    <div id="map" #map class="h-full w-full">
-    </div>
-    <div class="absolute top-0 left-0 w-full h-full bg-slate-400 z-50 transition-all overlay" [class.active]="isLoading || !isSearchComplete"></div>
+    <div id="map" #map class="h-full w-full"></div>
+    <div
+      class="absolute top-0 left-0 w-full h-full bg-slate-400 z-50 transition-all overlay"
+      [class.active]="isLoading || !isSearchComplete"
+    ></div>
   </div>
   <div
     (click)="share()"
     aria-hidden="true"
     (keyup)="share()"
-    class="bottom-0 m-auto bg-dandelion-400 w-1/2 text-center shadow-lg text-xl w-full cursor-pointer font-karla font-bold bottom-share-bar relative shadow-2xl"
+    class="bottom-0 m-auto bg-dandelion-400 w-1/2 text-center shadow-lg text-xl w-full cursor-pointer font-karla font-bold bottom-share-bar relative shadow-2xl p-6"
     [class.active]="isSearchComplete"
   >
     <div class="container absolute z-5 top-1/2 left-1/4"></div>
@@ -79,5 +81,22 @@
         >Share it <fa-icon [icon]="['fas', 'share-nodes']"></fa-icon
       ></span>
     </span>
+  </div>
+  <div class="z-10 w-full text-xs/1 bg-dandelion-400 text-left font-karla flex flex-row justify-between">
+    <div class="text-center p-1">
+      Dennis Rauscher |
+      <a href="https://dennisrauscher.de/" target="_blank" class="underline"
+        >Impressum</a
+      >
+      |
+      <a
+        href="https://dennisrauscher.de/de/privay-policy/"
+        target="_blank"
+        class="underline"
+        >Datenschutzerklärung</a
+      >
+    </div>
+    <div class="text-center bg-salmon-400 h-full p-1"><a href="https://dennisrauscher.de/" target="_blank" class="no-underline font-bold"
+      >Support this Projekt on Github <fa-icon [icon]="['fab', 'github']"></fa-icon></a></div>
   </div>
 </div>

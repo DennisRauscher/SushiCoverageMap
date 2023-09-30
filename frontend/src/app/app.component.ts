@@ -40,7 +40,8 @@ export class AppComponent implements AfterViewInit {
           zoom: 6, // Adjust the zoom level as needed
           streetViewControl: false,
           mapTypeControl: false,
-          fullscreenControl: false
+          fullscreenControl: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
         })
       }
     }).catch((error) => { console.log(error) })
@@ -114,7 +115,7 @@ export class AppComponent implements AfterViewInit {
           strokeOpacity: 0,
           strokeWeight: 0,
           fillColor: '#008000', // Set the fill color (e.g., red)
-          fillOpacity: fillOpacity * 0.2, // Set the fill opacity (0.0 to 1.0, 0.0 being fully transparent)
+          fillOpacity: fillOpacity * 0.1, // Set the fill opacity (0.0 to 1.0, 0.0 being fully transparent)
           map: this.map,
           center: place.geometry.location,
           radius: 0, // Radius in meters (adjust as needed)
