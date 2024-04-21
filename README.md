@@ -53,8 +53,6 @@ Don't wait any longer to embark on your sushi adventure. Clone this repo, find y
 
 Disclaimer: This project may cause intense cravings for sushi and a strong desire to explore every sushi place in town. Please sushi responsibly! 😄
 
-Certainly! Here's a section on how to set up the Google JSON API, Google Geocoding API, and Google Places API for your Sushi Coverage Map project:
-
 ---
 
 ## 🌐 Setting Up Google APIs
